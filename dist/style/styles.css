@@ -172,6 +172,20 @@ img {
   font-style: normal;
   font-variation-settings: "wght" 400, "wght" 900;
 }
+.header {
+  width: 100%;
+}
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
 h1 {
   font-family: "maven";
   font-weight: 500;
