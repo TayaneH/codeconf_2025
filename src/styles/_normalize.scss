@@ -1,0 +1,36 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button, input {
+  font: inherit;
+  border: none;
+  background: none;
+}
+img, picture {
+  display: block;
+  max-width: 100%;
+}
+:focus {
+  outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
