@@ -6,28 +6,26 @@
     background-color: var(--primary);
     display: flex;
     align-items: center;
-    //padding: 2rem;
+    justify-content: flex-end;
+    padding-right: 20rem;
     position: relative;
     overflow: visible;
-    min-height: 200px;
+    min-height: 175px;
   }
   
   &__teaser-image {
-    border: 1px solid rgb(169, 33, 33);
+    //border: 1px solid rgb(169, 33, 33);
     position: absolute;
-    bottom: 2rem;
+    bottom: 0rem;
     left: 50%;
-    transform: translateX(-70%);
-    width: 45%;
-    //height: auto;
-    max-height: 120%;
+    transform: translateX(-80%);
+    width: 40%;
   }
 
   &__teaser-content {
     //position: relative;
     z-index: 1;
-    width: 40%;
+    width: 25%;
     color: var(--text-white);
   }
- 
 }
