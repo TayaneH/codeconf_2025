@@ -22,15 +22,20 @@ button, input {
   border: none;
   background: none;
 }
-img, picture {
+img {
   display: block;
   max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: middle; /* Removes bottom gap */
 }
 :focus {
   outline: none;
 }
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+button {
+  appearance: none;
+  padding: 0;
+  margin: 0;
 }
