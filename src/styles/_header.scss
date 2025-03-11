@@ -1,0 +1,28 @@
+.header {
+  &__teaser {
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: visible;
+    min-height: 300px;
+  }
+  
+  &__teaser-image {
+    position: absolute;
+    bottom: .6rem;
+    left: 50%;
+    transform: translateX(-70%);
+    width: 50%;
+    height: auto;
+    max-height: 120%;
+  }
+
+  &__teaser-content {
+    //position: relative;
+    z-index: 1;
+    width: 40%;
+    color: var(--text-white);
+  }
+}
