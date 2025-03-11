@@ -210,7 +210,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 .header__nav-item {
   border-right: 1px solid black;
