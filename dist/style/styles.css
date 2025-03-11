@@ -217,9 +217,6 @@ img {
   padding-right: 1rem;
 }
 
-.header__nav {
-  border: 1px solid black;
-}
 .header__teaser {
   background-color: var(--primary);
   display: -webkit-box;
