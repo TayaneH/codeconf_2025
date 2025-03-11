@@ -242,7 +242,7 @@ button {
 .header__teaser-image {
   border: 1px solid rgb(169, 33, 33);
   position: absolute;
-  bottom: 0rem;
+  bottom: 2rem;
   left: 50%;
   -webkit-transform: translateX(-70%);
           transform: translateX(-70%);
