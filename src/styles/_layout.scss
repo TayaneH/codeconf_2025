@@ -1,9 +1,32 @@
+.header {
+  font-family: "maven";
+  font-weight: 300;
+ 
+}
 .speakers {
   h2 {
     color: var(--speaker-name);
     font-family: "museo";
     font-weight: 300;
-    font-size: 25px;
+    font-size: 24px;
+    display: block;
+    padding-bottom: 0.2rem;
+    padding-top: 0.8rem;
   }
+}
+.speaker {
+  &__location {
+    color: var(--speaker-location);
+    font-family: "leaguespartan";
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+.form-section {
+  background-color: var(--gradiant-pic);
+}
+body {
+  background: var(--gradiant-pic);
 }
 

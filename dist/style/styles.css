@@ -52,7 +52,7 @@ button {
 
 @font-face {
   font-family: "condeconf";
-  src: url("../dist/webfonts/codeconf-all/fonts/codeconf.woff") format("woff");
+  src: url("..../webfonts/codeconf-all/fonts/codeconf.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -154,30 +154,38 @@ button {
 /* museo */
 @font-face {
   font-family: "museo";
-  src: url("/dist/style/webfonts/museo/museo300.woff2") format("woff2"), url("/dist/style/webfonts/museo/museo300.woff") format("woff");
+  src: url("../style/webfonts/museo/museo300.woff2") format("woff2"), url("../style/webfonts/museo/museo300.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "museo";
-  src: url("/dist/style/webfonts/museo/museo500.woff2") format("woff2"), url("/dist/style/webfonts/museo/museo500.woff") format("woff");
+  src: url("../style/webfonts/museo/museo500.woff2") format("woff2"), url("../style/webfonts/museo/museo500.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "museo";
-  src: url("/dist/style/webfonts/museo/museo700.woff2") format("woff2"), url("/dist/style/webfonts/museo/museo700.woff") format("woff");
+  src: url("../style/webfonts/museo/museo700.woff2") format("woff2"), url("../style/webfonts/museo/museo700.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 /* maven variable */
 @font-face {
   font-family: "maven";
-  src: url("/dist/style/webfonts/maven_Pro/MavenPro-VariableFont_wght.ttf") format("truetype");
+  src: url("../style/webfonts/maven_Pro/MavenPro-VariableFont_wght.ttf") format("truetype-variations");
   font-weight: 400 900;
   font-style: normal;
   font-variation-settings: "wght" 400, "wght" 900;
+}
+/*leaguespartan variable*/
+@font-face {
+  font-family: "leaguespartan";
+  src: url("../style/webfonts/leaguespartan/LeagueSpartanVariable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-variation-settings: "wght" 100, "wght" 900;
 }
 :root {
   --primary: #702EF0;
@@ -192,13 +200,37 @@ button {
   --text-white: #FFFFFF;
   --footer-text: #E1CBB8;
   --footer-background: #343237;
+  --gradiant-pic: linear-gradient(45deg, var(--text-primary), var(--text-secondary));
+}
+
+.header {
+  font-family: "maven";
+  font-weight: 300;
 }
 
 .speakers h2 {
   color: var(--speaker-name);
   font-family: "museo";
   font-weight: 300;
-  font-size: 25px;
+  font-size: 24px;
+  display: block;
+  padding-bottom: 0.2rem;
+  padding-top: 0.8rem;
+}
+
+.speaker__location {
+  color: var(--speaker-location);
+  font-family: "leaguespartan";
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.form-section {
+  background-color: var(--gradiant-pic);
+}
+
+body {
+  background: var(--gradiant-pic);
 }
 
 .header {
@@ -261,8 +293,15 @@ button {
   color: var(--text-white);
 }
 
+.main {
+  padding: 1.5rem;
+}
+
+.hidden_details {
+  display: none;
+}
+
 .speakers {
-  border: 1px solid #c81818;
   display: grid;
   gap: 2rem;
   padding: 1rem;
@@ -279,9 +318,35 @@ button {
     grid-template-columns: 1fr;
   }
 }
-.speakers__pict img {
-  width: 20%;
+
+.speaker__pict {
+  position: relative;
+  display: block;
+}
+.speaker__pict img {
+  width: 100%;
   height: auto;
+  display: block;
+}
+.speaker__pict::after {
+  content: "";
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: url("/dist/images/elts/pattern_stripes.png") no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(133px);
+          transform: translateY(133px);
+}
+.speaker__name, .speaker__location {
+  padding-left: 1rem;
+}
+.speaker__lastname {
+  display: block;
+  color: var(--speaker-name);
 }
 
 h1 {
