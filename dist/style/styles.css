@@ -36,7 +36,6 @@ img {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: middle; /* Removes bottom gap */
 }
 
 :focus {
@@ -155,26 +154,27 @@ button {
 /* museo */
 @font-face {
   font-family: "museo";
-  src: url("dist/style/webfonts/museo/museo300.woff2") format("woff2"), url("dist/style/webfonts/museo/museo300.woff") format("woff");
+  src: url("/dist/style/webfonts/museo/museo300.woff2") format("woff2"), url("/dist/style/webfonts/museo/museo300.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "museo";
-  src: url("dist/style/webfonts/museo/museo500.woff2") format("woff2"), url("dist/style/webfonts/museo/museo500.woff") format("woff");
+  src: url("/dist/style/webfonts/museo/museo500.woff2") format("woff2"), url("/dist/style/webfonts/museo/museo500.woff") format("woff");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "museo";
-  src: url("dist/style/webfonts/museo/museo700.woff2") format("woff2"), url("dist/style/webfonts/museo/museo700.woff") format("woff");
+  src: url("/dist/style/webfonts/museo/museo700.woff2") format("woff2"), url("/dist/style/webfonts/museo/museo700.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 /* maven variable */
 @font-face {
   font-family: "maven";
-  src: url("dist/style/webfonts/maven_Pro/MavenPro-VariableFont_wght.ttf") format("woff2"), url("dist/style/webfonts/maven_Pro/MavenPro-VariableFont_wght.ttf") format("woff");
+  src: url("/dist/style/webfonts/maven_Pro/MavenPro-VariableFont_wght.ttf") format("truetype");
   font-weight: 400 900;
   font-style: normal;
   font-variation-settings: "wght" 400, "wght" 900;
@@ -192,6 +192,13 @@ button {
   --text-white: #FFFFFF;
   --footer-text: #E1CBB8;
   --footer-background: #343237;
+}
+
+.speakers h2 {
+  color: var(--speaker-name);
+  font-family: "museo";
+  font-weight: 300;
+  font-size: 25px;
 }
 
 .header {
@@ -230,35 +237,54 @@ button {
 }
 .header__teaser {
   background-color: var(--primary);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding-right: 20rem;
-  position: relative;
-  overflow: visible;
-  min-height: 175px;
+  gap: 2rem;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: clamp(6rem, 25vw, 34rem) clamp(20rem, 40vw, 40rem);
 }
 .header__teaser-image {
-  position: absolute;
-  bottom: 0rem;
-  left: 50%;
-  -webkit-transform: translateX(-80%);
-          transform: translateX(-80%);
-  width: 40%;
+  margin-top: -4rem;
+  -ms-flex-item-align: end;
+      align-self: end;
+}
+.header__teaser-image img {
+  width: 100%;
 }
 .header__teaser-content {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
   z-index: 1;
-  width: 25%;
+  padding-right: 5rem;
   color: var(--text-white);
 }
 
+.speakers {
+  border: 1px solid #c81818;
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 80rem;
+}
+@media (max-width: 1023px) {
+  .speakers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .speakers {
+    grid-template-columns: 1fr;
+  }
+}
+.speakers__pict img {
+  width: 20%;
+  height: auto;
+}
+
 h1 {
-  font-family: "maven";
+  font-family: museo;
   font-weight: 500;
 }/*# sourceMappingURL=styles.css.map */
