@@ -192,7 +192,7 @@ button {
   --cta: #FF3700;
   --speaker-name: #372860;
   --speaker-location: #9992AB;
-  --speaker-background: #F8F8F8;
+  --body-background: #e9e7e7;
   --background-light: #FFEEE6;
   --text-dark: #0D0D0D;
   --text-primary: #5F45F0;
@@ -226,11 +226,16 @@ button {
 }
 
 .form-section {
-  background-color: var(--gradiant-pic);
+  background: white;
 }
 
 body {
-  background: var(--gradiant-pic);
+  background: var(--body-background);
+}
+
+footer {
+  background: var(--footer-background);
+  color: var(--text-white);
 }
 
 .header {

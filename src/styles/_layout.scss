@@ -24,9 +24,13 @@
 }
 
 .form-section {
-  background-color: var(--gradiant-pic);
+  background: white;
 }
 body {
-  background: var(--gradiant-pic);
+  background: var(--body-background);
+}
+footer {
+  background: var(--footer-background);
+  color: var(--text-white);
 }
 
