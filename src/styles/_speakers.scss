@@ -1,4 +1,4 @@
-.main .speakers{
+.main .speakers {
   padding: 1.5rem;
 }
 .hidden_details {
@@ -25,13 +25,13 @@
   &__pict {
     position: relative;
     display: block;
-    
+
     img {
       width: 100%;
       height: auto;
       display: block;
     }
-    
+
     &::after {
       content: "";
       z-index: 1;
@@ -45,7 +45,8 @@
       transform: translateY(133px);
     }
   }
-  &__name , &__location {
+  &__name,
+  &__location {
     padding-left: 1rem;
   }
 
@@ -54,31 +55,38 @@
     color: var(--speaker-name);
   }
 }
- //teaser
- .teaser {
+//teaser
+.teaser {
   background-color: var(--primary);
   gap: 2rem;
   display: grid;
   justify-content: center;
-  grid-template-columns: clamp(6rem,25vw,34rem) clamp(20rem,40vw,40rem);
-&__pic {
-  margin-top: -4rem;
-  align-self: end;
-  img {
-    width: 100%;
-  }
-}
-&__content {
-  background: red;
+  grid-template-columns: 1fr;
   @media (min-width: $mobile) {
-    background: black;
     display: grid;
-    //lign-content: center;
-    //z-index: 1;
-    padding-right: 5rem;
-    color: var(--text-white);
+    justify-content: center;
+    grid-template-columns: clamp(6rem, 25vw, 34rem) clamp(20rem, 40vw, 40rem);
+  
+  }
+
+  &__pic {
+    margin-top: -1.5rem;
+    align-self: end;
+    img {
+      width: 100%;
+    }
+    @media (min-width: $mobile) {
+      margin-top: -4rem;
+    }
+  }
+  &__content {
+    display: none;
+    @media (min-width: $mobile) {
+      display: grid;
+      gap: 1rem;
+      //z-index: 1;
+      padding-right: 5rem;
+      color: var(--text-white);
+    }
   }
 }
-}
-
-

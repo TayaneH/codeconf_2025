@@ -210,6 +210,10 @@ button {
   font-weight: 300;
 }
 
+.teaser {
+  color: var(--text-white);
+}
+
 .speakers h2 {
   color: var(--speaker-name);
   font-family: "museo";
@@ -313,7 +317,7 @@ footer {
   inset-block: 0;
   background: var(--primary);
   color: white;
-  font-size: 28px;
+  font-size: 20px;
 }
 @media (min-width: 40rem) {
   .header__nav-list {
@@ -330,6 +334,7 @@ footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    font-size: 18px;
   }
 }
 
@@ -396,23 +401,37 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  grid-template-columns: clamp(6rem, 25vw, 34rem) clamp(20rem, 40vw, 40rem);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 40rem) {
+  .teaser {
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    grid-template-columns: clamp(6rem, 25vw, 34rem) clamp(20rem, 40vw, 40rem);
+  }
 }
 .teaser__pic {
-  margin-top: -4rem;
+  margin-top: -1.5rem;
   -ms-flex-item-align: end;
       align-self: end;
 }
 .teaser__pic img {
   width: 100%;
 }
+@media (min-width: 40rem) {
+  .teaser__pic {
+    margin-top: -4rem;
+  }
+}
 .teaser__content {
-  background: red;
+  display: none;
 }
 @media (min-width: 40rem) {
   .teaser__content {
-    background: black;
     display: grid;
+    gap: 1rem;
     padding-right: 5rem;
     color: var(--text-white);
   }

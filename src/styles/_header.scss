@@ -13,7 +13,6 @@
 }
 
 .header__nav {
-
   display: flex;
   gap: 2rem;
   justify-content: space-between;
@@ -28,15 +27,15 @@
     align-items: end;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     transition: all 1s;
     position: fixed;
     //position     start.   end
     inset-inline: 100vw -100vw;
-    inset-block: 0 ;
+    inset-block: 0;
     background: var(--primary);
     color: white;
-    font-size: 28px;
+    font-size: 20px;
 
     @media (min-width: $mobile) {
       flex-direction: row;
@@ -45,7 +44,7 @@
       position: static;
       display: flex;
       justify-content: space-between;
+      font-size: 18px;
     }
-    }
-    }
-    
+  }
+}
