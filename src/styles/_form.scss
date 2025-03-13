@@ -1,0 +1,80 @@
+.form-section {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  padding: 4rem 1.7rem 0 1.7rem;
+  label {
+    //border: 1px solid #000;
+    display: none;
+  }
+  &__intro {
+    max-width: 600px;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+  }
+}
+
+.form {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+  &__input {
+    border-bottom: 1px solid var(--input-line);
+    width: 100%;
+  }
+  &__group {
+    textarea {
+      padding: 0.8rem;
+      border: 1px solid var(--input-line);
+      width: 100%;
+      resize: vertical;
+  }
+  }
+  &__submit {
+    padding: 1rem 2rem;
+    border: 1px solid #f05 ;
+    border-radius: 4rem;
+    justify-self: center;
+  }
+}
+
+// CTA get ticket
+  
+.cta {
+  padding: 0;
+  display: grid;
+  margin-bottom: 0;
+  transform: translateY(4rem);
+}
+.get_ticket {
+  display: inline-grid;
+  justify-items: center;
+  text-decoration: none;
+  &__group {
+    padding: 1.4rem 1.8rem;
+    border-radius: 4rem;
+    background: #f05;
+    box-shadow: 0 1px 13px 24px rgba(228,65,84,0.15), 0 -1px 0 20px rgba(238,231,224,0.07);
+    border-radius: 47.5px;
+    [class] {
+      &:before {
+        content: "p";
+        opacity:.5;
+        margin-left: .9rem;
+      }
+    }
+    .visa:before {
+      content: "v";
+      margin-left: .4rem;
+    }
+  }
+  &__price {
+    padding: .3rem 1.2rem .4rem;
+    background: #1D1C22;
+    z-index: 10;
+    position: relative;
+    border-radius: 0rem 0rem 1rem 1rem;
+  }
+}

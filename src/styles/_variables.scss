@@ -16,7 +16,10 @@
   --text-primary: #5F45F0;
   --text-secondary: #04BFAD;
   --text-white: #FFFFFF;
-  
+
+  //from
+  --input-line: #c9c4c4;
+
   // Footer
   --footer-text: #E1CBB8;
   --footer-background: #343237;
@@ -28,4 +31,8 @@
   --offset: 1rem;
 }
 
+//@media 
+$mobile: 40rem;    // 480px
+$tablet: 48rem;    // 768px
+$desktop: 64rem;   // 1024px
 

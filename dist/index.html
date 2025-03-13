@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <header class="header">
     <nav class="header__nav">
       <div class="header__nav__logo">
@@ -21,25 +22,28 @@
         <li class="header__nav-item"><a href="#" class="header__nav-link">Speakers</a></li>
         <li class="header__nav-item"><a href="#" class="header__nav-link">Team</a></li>
         <li class="header__nav-item"><a href="#" class="header__nav-link">Contact</a></li>
-        <li class="header__nav-item"><a href="#" class="header__nav-link__schedule_link">Schedule</a></li>
+        <li class="header__nav-item"><a href="#" class="header__nav-link__schedule_link"><span
+              class="icon-schedule"></span>Schedule</a></li>
         <li class="header__nav-item"><a href="#" class="header__nav-link">Search</a></li>
       </ul>
     </nav>
-    <div class="header__teaser">
-      <picture class="header__teaser-image">
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="teaser">
+      <picture class="teaser__pic">
         <source media="(min-width: 1024px)" srcset="images/page-picture/presents@3x.png" sizes="1200px">
         <source media="(min-width: 768px)" srcset="images/page-picture/presents@2x.png" sizes="800px">
         <source media="(min-width: 320px)" srcset="images/page-picture/presents.png" sizes="400px">
         <img src="images/page-picture/presents.png" alt="presents" width="50%" height="auto">
       </picture>
-      <div class="header__teaser-content">
-        <h1 class="header__teaser-title">Speaker Edition 2025</h1>
-        <p class="header__teaser-description">Discover the speakers and the topics or suggest your own topic for our
+      <div class="teaser__content">
+        <h1 class="teaser__title">Speaker Edition 2025</h1>
+        <p class="teaserdescription">Discover the speakers and the topics or suggest your own topic for our
           next event</p>
       </div>
-    </div>
-  </header>
-  <main class="main">
+    </section>
     <div class="breadcrumb">
       <a href="#" class="breadcrumb__link">Home</a>
       <a href="#" class="breadcrumb__link">speakers</a>
@@ -177,7 +181,8 @@
           <div class="hidden_details">
             <div class="speaker__detail">
               <h3 class="speaker__topic">The Way of the Web</h3>
-              <p class="speaker__text_detail">Science fiction is not about predicting the future, but about what we need
+              <p class="speaker__text_detail">Science fiction is not about predicting the future, but about what we
+                need
                 to have a future</p>
             </div>
             <footer class="speaker__footer">
@@ -201,7 +206,8 @@
           <div class="hidden_details">
             <div class="speaker__detail">
               <h3 class="speaker__topic">Making SVG icon libraries for React apps</h3>
-              <p class="speaker__text_detail">Using SVG is currently the best way to create icon libraries for apps</p>
+              <p class="speaker__text_detail">Using SVG is currently the best way to create icon libraries for apps
+              </p>
             </div>
             <footer class="speaker__footer">
               <p>
@@ -247,7 +253,8 @@
           <div class="hidden_details">
             <div class="speaker__detail">
               <h3 class="speaker__topic">Zero interface thinking</h3>
-              <p class="speaker__text_detail">Everything we introduce has the potential to ruin everything. Ask: Is this
+              <p class="speaker__text_detail">Everything we introduce has the potential to ruin everything. Ask: Is
+                this
                 absolutely necessary?</p>
             </div>
             <footer class="speaker__footer">
@@ -271,7 +278,8 @@
           <div class="hidden_details">
             <div class="speaker__detail">
               <h3 class="speaker__topic">Developer Tooling, lighthouse</h3>
-              <p class="speaker__text_detail">Auditing, performance metrics, and best practices for Progressive Web Apps
+              <p class="speaker__text_detail">Auditing, performance metrics, and best practices for Progressive Web
+                Apps
               </p>
             </div>
             <footer class="speaker__footer">
@@ -333,51 +341,60 @@
       </div>
     </section>
     <section class="form-section">
-      <h1 class="form-section__title">Become speaker</h1>
-      <h2 class="form-section__subtitle">Do you have a topic that you like?</h2>
-      <p class="form-section__description">Submit it for the next event by filling out the form below. Do not forget to
-        specify the subject and the
-        related keywords</p>
+      <div class="form-section__intro">
+        <h1 class="form-section__title">Become speaker</h1>
+        <h2 class="form-section__subtitle">Do you have a topic that you like?</h2>
+        <p class="form-section__description">Submit it for the next event by filling out the form below. Do not forget
+          to
+          specify the subject and the
+          related keywords</p>
+      </div>
       <form class="form" action="" method="post">
         <div class="form__group">
           <label class="form__label" for="name">Name
-            <input class="form__input" type="text" id="name" name="name" placeholder="Name" required>
           </label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Name" required>
         </div>
 
         <div class="form__group">
           <label class="form__label" for="email">Mail
-            <input class="form__input" type="email" id="email" name="email" placeholder="Mail" required>
           </label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="Mail" required>
         </div>
 
         <div class="form__group">
           <label class="form__label" for="subject">Your Subject
-            <input class="form__input" type="text" id="subject" name="subject" placeholder="Your Subject" required>
           </label>
+          <input class="form__input" type="text" id="subject" name="subject" placeholder="Your Subject" required>
         </div>
 
         <div class="form__group">
           <label class="form__label" for="keywords">Keywords
-            <input class="form__input" type="text" id="keywords" name="keywords" placeholder="Keywords" required>
           </label>
+          <input class="form__input" type="text" id="keywords" name="keywords" placeholder="Keywords" required>
         </div>
 
         <div class="form__group">
           <label class="form__label" for="details">Short Details
-            <textarea class="form__textarea" id="details" name="details" rows="4" placeholder="Short Details"
-              required></textarea>
           </label>
+          <textarea class="form__textarea" id="details" name="details" rows="4" placeholder="Short Details"
+            required></textarea>
         </div>
 
         <button type="submit" class="form__submit">send your subject</button>
       </form>
       <p class="form-section__alternative">or just participate to the present event...</p>
+      <section class="cta">
+        <a href="" class="get_ticket">
+          <strong class="get_ticket__group">get ticket
+            <span class="paypal">paypal</span>
+            <span class="visa">visa</span>
+          </strong>
+          <em class="get_ticket__price">$199 USD</em>
+        </a>
+      </section>
     </section>
-    <div class="ticket">
-      <a href="#" class="ticket__button">get ticket</a>
-      <data value="99.99" class="ticket__price">$99.99 USD</data>
-    </div>
+
   </main>
   <footer class="footer">
     <section class="footer__venue">
@@ -402,6 +419,7 @@
     </section>
     <section class="footer__info">
       <div class="footer__social">
+        <h3>Follow us</h3>
         <ul class="footer__social-list">
           <li class="footer__social-item"><a href="#" class="footer__social-link">@codeconf2025</a></li>
           <li class="footer__social-item"><a href="#" class="footer__social-link">#codeconf2025</a></li>
@@ -419,28 +437,6 @@
       </div>
     </section>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const speakers = document.querySelectorAll('.speaker');
-
-      speakers.forEach(speaker => {
-        speaker.addEventListener('click', function () {
-          const details = this.querySelector('.hidden_details');
-          const allDetails = document.querySelectorAll('.hidden_details');
-
-          // First hide all other details
-          allDetails.forEach(detail => {
-            if (detail !== details) {
-              detail.classList.remove('visible');
-            }
-          });
-
-          // Toggle the clicked speaker's details
-          details.classList.toggle('visible');
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>

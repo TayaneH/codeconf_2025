@@ -34,3 +34,28 @@ footer {
   color: var(--text-white);
 }
 
+.get_ticket {
+  font-family: 'maven', sans-serif;
+  
+  &__group {
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.3rem;
+    
+    [class] {
+      font-size: 0;
+      font-weight: bold;
+      
+      &:before {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  &__price {
+    color: white;
+    font-style: normal;
+    font-size: 0.8rem;
+  }
+}
+
