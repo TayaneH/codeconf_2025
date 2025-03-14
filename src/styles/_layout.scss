@@ -1,3 +1,6 @@
+body {
+  background: var(--body-background);
+}
 .header {
   font-family: "maven";
   font-weight: 300;
@@ -25,15 +28,31 @@
   }
 }
 
+//form
 .form-section {
   background: white;
+  h1 {
+    color: var(--primary);
+    font-family: "maven";
+    font-weight: 600;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+  
+
+  
+  h2 {
+    font-family: "museo";
+    font-weight: 400;
+  }
+  p {
+    font-family: "museo";
+    font-weight: 300;
+    padding: .5rem;
+  }
 }
-body {
-  background: var(--body-background);
-}
-footer {
-  background: var(--footer-background);
-  color: var(--text-white);
+.form-section__alternative {
+  font-size: 20px;
 }
 
 .get_ticket {
@@ -61,3 +80,30 @@ footer {
   }
 }
 
+
+.breadcrumb {
+  font-family: museo;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+//footer
+footer {
+  background: var(--footer-background);
+  color: var(--text-white);
+  font-family: "leaguespartan";
+  font-weight: 200;
+  font-size: 16px;
+
+}
+
+
+.footer {
+  h3, h2 {
+    color: var(--footer-text);
+    font-family: museo;
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+}

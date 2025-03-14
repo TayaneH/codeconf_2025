@@ -189,7 +189,7 @@ button {
 }
 :root {
   --primary: #702EF0;
-  --cta: #FF3700;
+  --cta: #ff0055;
   --speaker-name: #372860;
   --speaker-location: #9992AB;
   --body-background: #e9e7e7;
@@ -203,6 +203,10 @@ button {
   --footer-background: #343237;
   --gradiant-pic: linear-gradient(45deg, var(--text-primary), var(--text-secondary));
   --offset: 1rem;
+}
+
+body {
+  background: var(--body-background);
 }
 
 .header {
@@ -234,14 +238,25 @@ button {
 .form-section {
   background: white;
 }
-
-body {
-  background: var(--body-background);
+.form-section h1 {
+  color: var(--primary);
+  font-family: "maven";
+  font-weight: 600;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+.form-section h2 {
+  font-family: "museo";
+  font-weight: 400;
+}
+.form-section p {
+  font-family: "museo";
+  font-weight: 300;
+  padding: 0.5rem;
 }
 
-footer {
-  background: var(--footer-background);
-  color: var(--text-white);
+.form-section__alternative {
+  font-size: 20px;
 }
 
 .get_ticket {
@@ -263,6 +278,27 @@ footer {
   color: white;
   font-style: normal;
   font-size: 0.8rem;
+}
+
+.breadcrumb {
+  font-family: museo;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+footer {
+  background: var(--footer-background);
+  color: var(--text-white);
+  font-family: "leaguespartan";
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.footer h3, .footer h2 {
+  color: var(--footer-text);
+  font-family: museo;
+  font-weight: 300;
+  font-size: 20px;
 }
 
 .trigger {
@@ -400,59 +436,22 @@ footer {
 .breadcrumb {
   padding: 2rem;
 }
-
-.hidden_details {
+.breadcrumb .icon-home {
+  color: var(--cta);
+  font-size: 20px;
+}
+.breadcrumb__link {
+  -webkit-border-start: 1px solid black;
+          border-inline-start: 1px solid black;
+  -webkit-padding-start: 0.5rem;
+          padding-inline-start: 0.5rem;
+}
+.breadcrumb__link-home {
   display: none;
 }
 
-.speakers {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 80rem;
-}
-@media (max-width: 1023px) {
-  .speakers {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (max-width: 767px) {
-  .speakers {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 40rem) {
-  .speaker__pict {
-    position: relative;
-    display: block;
-  }
-  .speaker__pict img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .speaker__pict::after {
-    content: "";
-    z-index: 1;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background: url("/dist/images/elts/pattern_stripes.png") no-repeat;
-    background-size: contain;
-    -webkit-transform: translateY(133px);
-            transform: translateY(133px);
-  }
-  .speaker__name, .speaker__location {
-    padding-left: 1rem;
-  }
-  .speaker__lastname {
-    display: block;
-    color: var(--speaker-name);
-  }
+.hidden_details {
+  display: none;
 }
 
 .teaser {
@@ -511,20 +510,57 @@ footer {
   }
 }
 
+.speakers-section {
+  display: grid;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+.speakers-section .speaker {
+  display: grid;
+  padding-inline: 2rem;
+}
+.speakers-section .speaker__header {
+  display: grid;
+  grid-template-columns: auto auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+  grid-template-rows: 1fr 1fr;
+}
+.speakers-section .speaker__header h2, .speakers-section .speaker__header h3, .speakers-section .speaker__header p {
+  margin: 0;
+  grid-column: 1/2;
+}
+.speakers-section .speaker__pict {
+  grid-column: 2/-1;
+  grid-row: 1/3;
+}
+.speakers-section .speaker__pict img {
+  width: clamp(8rem, 25vw, 16rem);
+  height: auto;
+  border-radius: 20rem;
+  border: 1px solid #000;
+}
+.speakers-section .speaker__name, .speakers-section .speaker__location {
+  padding-right: 1rem;
+}
+
 .form-section {
   display: grid;
   justify-items: center;
   gap: 1.5rem;
   padding: 4rem 1.7rem 0 1.7rem;
 }
-.form-section label {
-  display: none;
-}
 .form-section__intro {
   max-width: 600px;
   display: grid;
   gap: 1rem;
   justify-items: center;
+}
+.form-section__description {
+  text-align: center;
 }
 
 .form {
@@ -537,17 +573,52 @@ footer {
   border-bottom: 1px solid var(--input-line);
   width: 100%;
 }
+.form__group {
+  position: relative;
+}
 .form__group textarea {
   padding: 0.8rem;
   border: 1px solid var(--input-line);
   width: 100%;
   resize: vertical;
 }
+.form__required {
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  color: var(--cta);
+}
 .form__submit {
+  font-family: "maven";
+  font-weight: 300;
   padding: 1rem 2rem;
-  border: 1px solid #f05;
+  border: 1px solid var(--cta);
   border-radius: 4rem;
   justify-self: center;
+  background: transparent;
+  color: var(--cta);
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.form__submit:hover {
+  background: var(--cta);
+  color: white;
+}
+
+.form__label {
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+.form__label > span {
+  position: absolute;
+  font-size: 1rem;
+  color: grey;
+  -webkit-padding-start: 0rem;
+          padding-inline-start: 0rem;
+  -webkit-transform: translatey(1);
+          transform: translatey(1);
 }
 
 .cta {
@@ -566,7 +637,7 @@ footer {
 .get_ticket__group {
   padding: 1.4rem 1.8rem;
   border-radius: 4rem;
-  background: #f05;
+  background: var(--cta);
   -webkit-box-shadow: 0 1px 13px 24px rgba(228, 65, 84, 0.15), 0 -1px 0 20px rgba(238, 231, 224, 0.07);
           box-shadow: 0 1px 13px 24px rgba(228, 65, 84, 0.15), 0 -1px 0 20px rgba(238, 231, 224, 0.07);
   border-radius: 47.5px;

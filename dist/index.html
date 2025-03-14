@@ -45,8 +45,9 @@
       </div>
     </section>
     <div class="breadcrumb">
-      <a href="#" class="breadcrumb__link">Home</a>
-      <a href="#" class="breadcrumb__link">speakers</a>
+      <span class="icon-home" aria-hidden="true"></span>
+      <a href="#" class="breadcrumb__link-home">Home</a>
+      <a href="#" class="breadcrumb__link">Speakers</a>
     </div>
     <section class="speakers-section">
       <div class="speakers">
@@ -351,32 +352,32 @@
       </div>
       <form class="form" action="" method="post">
         <div class="form__group">
-          <label class="form__label" for="name">Name
-          </label>
+          <span class="form__required">*</span>
+          <label class="form__label" for="name">Name</label>
           <input class="form__input" type="text" id="name" name="name" placeholder="Name" required>
         </div>
 
         <div class="form__group">
-          <label class="form__label" for="email">Mail
-          </label>
+          <span class="form__required">*</span>
+          <label class="form__label" for="email">Mail</label>
           <input class="form__input" type="email" id="email" name="email" placeholder="Mail" required>
         </div>
 
         <div class="form__group">
-          <label class="form__label" for="subject">Your Subject
-          </label>
+          <span class="form__required">*</span>
+          <label class="form__label" for="subject">Your Subject</label>
           <input class="form__input" type="text" id="subject" name="subject" placeholder="Your Subject" required>
         </div>
 
         <div class="form__group">
-          <label class="form__label" for="keywords">Keywords
-          </label>
+          <span class="form__required">*</span>
+          <label class="form__label" for="keywords">Keywords</label>
           <input class="form__input" type="text" id="keywords" name="keywords" placeholder="Keywords" required>
         </div>
 
         <div class="form__group">
-          <label class="form__label" for="details">Short Details
-          </label>
+          <span class="form__required">*</span>
+          <label class="form__label" for="details">Short Details</label>
           <textarea class="form__textarea" id="details" name="details" rows="4" placeholder="Short Details"
             required></textarea>
         </div>

@@ -1,0 +1,51 @@
+
+.speakers {
+  //border: 1px solid #8cbb17;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 80rem;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+.speaker {
+  //border: 1px solid red;
+  &__pict {
+    position: relative;
+    display: block;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: url("/dist/images/elts/pattern_stripes.png") no-repeat;
+      background-size: contain;
+      transform: translateY(133px);
+    }
+  }
+  &__name,
+  &__location {
+    padding-left: 1rem;
+  }
+
+  &__lastname {
+    display: block;
+    color: var(--speaker-name);
+  }
+}
