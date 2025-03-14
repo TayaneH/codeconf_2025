@@ -1,6 +1,9 @@
-.main .speakers {
-  padding: 1.5rem;
+
+.breadcrumb {
+ padding: 2rem;
 }
+
+
 .hidden_details {
   display: none;
 }
@@ -9,7 +12,8 @@
   //border: 1px solid #8cbb17;
   display: grid;
   gap: 2rem;
-  padding: 1rem;
+  padding: 2rem;
+  padding: ;
   grid-template-columns: repeat(4, 1fr);
   max-width: 80rem;
 
@@ -55,37 +59,51 @@
     color: var(--speaker-name);
   }
 }
+
+
 //teaser
 .teaser {
   background-color: var(--primary);
   gap: 2rem;
   display: grid;
-  justify-content: center;
+  justify-items: center;
   grid-template-columns: 1fr;
+  position: relative;
+  //max-height: 8rem; ;
   @media (min-width: $mobile) {
     display: grid;
     justify-content: center;
     grid-template-columns: clamp(6rem, 25vw, 34rem) clamp(20rem, 40vw, 40rem);
-  
   }
 
   &__pic {
-    margin-top: -1.5rem;
+    margin-top: -4.5rem;
     align-self: end;
     img {
       width: 100%;
+      }
     }
     @media (min-width: $mobile) {
       margin-top: -4rem;
+
     }
-  }
   &__content {
-    display: none;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    max-width: 10rem;
+        p {
+          display: none;
+          @media (min-width: $mobile) {
+            display:contents;}
+        }  
     @media (min-width: $mobile) {
+      position: inherit;
       display: grid;
-      gap: 1rem;
+      align-content: center;
+      gap: 0.5rem;
+      max-width: 20rem;
       //z-index: 1;
-      padding-right: 5rem;
       color: var(--text-white);
     }
   }

@@ -11,6 +11,45 @@
   inset-inline: 10vw 0;
   z-index: 3;
 }
+.trigger {
+  --size: 2rem;
+  display: none;
+  appearance: none;
+  @media (max-width: $mobile){ 
+    display: grid;
+    //justify-content: end;
+    padding-inline-end: 0;
+    align-content: start;
+    position: fixed;
+    right: var(--offset);
+    top: var(--offset);
+    width: var(--size);
+    height: var(--size);
+    z-index: 9999;
+    &::before {
+      pointer-events: none;
+      content: "\e93e";
+      font-size: 1.5rem;
+      font-family: 'codeconf';
+    }
+    }
+    // the X bu
+    &:checked::before {
+      content:"";
+      width: 1rem;
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 2px #ffffff;
+      z-index: 9999;
+    }
+    &:checked::after {
+      content:"";
+      width: 1rem;
+      transform: rotate(135deg);
+      box-shadow: 0 0 0 2px #ffffff;
+      z-index: 9999;
+    }
+  }
+
 
 .header__nav {
   display: flex;
@@ -36,6 +75,7 @@
     background: var(--primary);
     color: white;
     font-size: 20px;
+    
 
     @media (min-width: $mobile) {
       flex-direction: row;
@@ -45,6 +85,16 @@
       display: flex;
       justify-content: space-between;
       font-size: 18px;
+      li {
+        border-inline-end: 1px solid black;
+        padding-inline-end: 1rem;
+      }
     }
   }
 }
+
+.icon-schedule {
+  color: var(--cta);
+  padding-inline-end: .5rem;
+}
+

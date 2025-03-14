@@ -281,6 +281,53 @@ footer {
   z-index: 3;
 }
 
+.trigger {
+  --size: 2rem;
+  display: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+@media (max-width: 40rem) {
+  .trigger {
+    display: grid;
+    -webkit-padding-end: 0;
+            padding-inline-end: 0;
+    -ms-flex-line-pack: start;
+        align-content: start;
+    position: fixed;
+    right: var(--offset);
+    top: var(--offset);
+    width: var(--size);
+    height: var(--size);
+    z-index: 9999;
+  }
+  .trigger::before {
+    pointer-events: none;
+    content: "\e93e";
+    font-size: 1.5rem;
+    font-family: "codeconf";
+  }
+}
+.trigger:checked::before {
+  content: "";
+  width: 1rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 0 2px #ffffff;
+          box-shadow: 0 0 0 2px #ffffff;
+  z-index: 9999;
+}
+.trigger:checked::after {
+  content: "";
+  width: 1rem;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-box-shadow: 0 0 0 2px #ffffff;
+          box-shadow: 0 0 0 2px #ffffff;
+  z-index: 9999;
+}
+
 .header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -336,10 +383,22 @@ footer {
             justify-content: space-between;
     font-size: 18px;
   }
+  .header__nav-list li {
+    -webkit-border-end: 1px solid black;
+            border-inline-end: 1px solid black;
+    -webkit-padding-end: 1rem;
+            padding-inline-end: 1rem;
+  }
 }
 
-.main .speakers {
-  padding: 1.5rem;
+.icon-schedule {
+  color: var(--cta);
+  -webkit-padding-end: 0.5rem;
+          padding-inline-end: 0.5rem;
+}
+
+.breadcrumb {
+  padding: 2rem;
 }
 
 .hidden_details {
@@ -349,7 +408,7 @@ footer {
 .speakers {
   display: grid;
   gap: 2rem;
-  padding: 1rem;
+  padding: 2rem;
   grid-template-columns: repeat(4, 1fr);
   max-width: 80rem;
 }
@@ -364,44 +423,45 @@ footer {
   }
 }
 
-.speaker__pict {
-  position: relative;
-  display: block;
-}
-.speaker__pict img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.speaker__pict::after {
-  content: "";
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background: url("/dist/images/elts/pattern_stripes.png") no-repeat;
-  background-size: contain;
-  -webkit-transform: translateY(133px);
-          transform: translateY(133px);
-}
-.speaker__name, .speaker__location {
-  padding-left: 1rem;
-}
-.speaker__lastname {
-  display: block;
-  color: var(--speaker-name);
+@media (min-width: 40rem) {
+  .speaker__pict {
+    position: relative;
+    display: block;
+  }
+  .speaker__pict img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .speaker__pict::after {
+    content: "";
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url("/dist/images/elts/pattern_stripes.png") no-repeat;
+    background-size: contain;
+    -webkit-transform: translateY(133px);
+            transform: translateY(133px);
+  }
+  .speaker__name, .speaker__location {
+    padding-left: 1rem;
+  }
+  .speaker__lastname {
+    display: block;
+    color: var(--speaker-name);
+  }
 }
 
 .teaser {
   background-color: var(--primary);
   gap: 2rem;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-items: center;
   grid-template-columns: 1fr;
+  position: relative;
 }
 @media (min-width: 40rem) {
   .teaser {
@@ -413,7 +473,7 @@ footer {
   }
 }
 .teaser__pic {
-  margin-top: -1.5rem;
+  margin-top: -4.5rem;
   -ms-flex-item-align: end;
       align-self: end;
 }
@@ -421,18 +481,32 @@ footer {
   width: 100%;
 }
 @media (min-width: 40rem) {
-  .teaser__pic {
+  .teaser {
     margin-top: -4rem;
   }
 }
 .teaser__content {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  max-width: 10rem;
+}
+.teaser__content p {
   display: none;
 }
 @media (min-width: 40rem) {
+  .teaser__content p {
+    display: contents;
+  }
+}
+@media (min-width: 40rem) {
   .teaser__content {
+    position: inherit;
     display: grid;
-    gap: 1rem;
-    padding-right: 5rem;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    gap: 0.5rem;
+    max-width: 20rem;
     color: var(--text-white);
   }
 }
