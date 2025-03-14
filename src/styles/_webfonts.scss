@@ -6,8 +6,8 @@
   font-display: block;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'codeconf' !important;
   //speak: none;
@@ -22,64 +22,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-hour:before {
+.icon-hour::before {
   content: "\e900";
 }
-.icon-pin:before {
+.icon-pin::before {
   content: "\e901";
 }
-.icon-burger:before {
+.icon-burger::before {
   content: "\e93e";
 }
-.icon-schedule:before {
+.icon-schedule::before {
   content: "\e93f";
 }
-.icon-loop:before {
+.icon-loop::before {
   content: "\e940";
 }
-.icon-contact:before {
+.icon-contact::before {
   content: "\e941";
 }
-.icon-event:before {
+.icon-event::before {
   content: "\e942";
 }
-.icon-home:before {
+.icon-home::before {
   content: "\e943";
 }
-.icon-card:before {
+.icon-card::before {
   content: "\e944";
 }
-.icon-paypal:before {
+.icon-paypal::before {
   content: "\e945";
 }
-.icon-tw:before {
+.icon-tw::before {
   content: "\e946";
 }
-.icon-slack:before {
+.icon-slack::before {
   content: "\e947";
 }
-.icon-heart_full:before {
+.icon-heart_full::before {
   content: "\e948";
 }
-.icon-heart_line:before {
+.icon-heart_line::before {
   content: "\e949";
 }
-.icon-square_full:before {
+.icon-square_full::before {
   content: "\e94a";
 }
-.icon-square_line:before {
+.icon-square_line::before {
   content: "\e94b";
 }
-.icon-spade_full:before {
+.icon-spade_full::before {
   content: "\e94c";
 }
-.icon-spade_line:before {
+.icon-spade_line::before {
   content: "\e94d";
 }
-.icon-clover_full:before {
+.icon-clover_full::before {
   content: "\e94e";
 }
-.icon-clover_line:before {
+.icon-clover_line::before {
   content: "\e94f";
 }
 

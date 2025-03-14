@@ -57,8 +57,8 @@ button {
   font-style: normal;
   font-display: block;
 }
-[class^=icon-]:before,
-[class*=" icon-"]:before {
+[class^=icon-]::before,
+[class*=" icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "codeconf" !important;
   font-style: normal;
@@ -71,83 +71,83 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-hour:before {
+.icon-hour::before {
   content: "\e900";
 }
 
-.icon-pin:before {
+.icon-pin::before {
   content: "\e901";
 }
 
-.icon-burger:before {
+.icon-burger::before {
   content: "\e93e";
 }
 
-.icon-schedule:before {
+.icon-schedule::before {
   content: "\e93f";
 }
 
-.icon-loop:before {
+.icon-loop::before {
   content: "\e940";
 }
 
-.icon-contact:before {
+.icon-contact::before {
   content: "\e941";
 }
 
-.icon-event:before {
+.icon-event::before {
   content: "\e942";
 }
 
-.icon-home:before {
+.icon-home::before {
   content: "\e943";
 }
 
-.icon-card:before {
+.icon-card::before {
   content: "\e944";
 }
 
-.icon-paypal:before {
+.icon-paypal::before {
   content: "\e945";
 }
 
-.icon-tw:before {
+.icon-tw::before {
   content: "\e946";
 }
 
-.icon-slack:before {
+.icon-slack::before {
   content: "\e947";
 }
 
-.icon-heart_full:before {
+.icon-heart_full::before {
   content: "\e948";
 }
 
-.icon-heart_line:before {
+.icon-heart_line::before {
   content: "\e949";
 }
 
-.icon-square_full:before {
+.icon-square_full::before {
   content: "\e94a";
 }
 
-.icon-square_line:before {
+.icon-square_line::before {
   content: "\e94b";
 }
 
-.icon-spade_full:before {
+.icon-spade_full::before {
   content: "\e94c";
 }
 
-.icon-spade_line:before {
+.icon-spade_line::before {
   content: "\e94d";
 }
 
-.icon-clover_full:before {
+.icon-clover_full::before {
   content: "\e94e";
 }
 
-.icon-clover_line:before {
+.icon-clover_line::before {
   content: "\e94f";
 }
 
@@ -516,6 +516,20 @@ footer {
       -ms-flex-pack: stretch;
           justify-content: stretch;
 }
+.speakers-section .speakers {
+  display: grid;
+  gap: 0.5rem;
+}
+@media (min-width: 40rem) {
+  .speakers-section .speakers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 48rem) {
+  .speakers-section .speakers {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 .speakers-section .speaker {
   display: grid;
   padding-inline: 2rem;
@@ -526,7 +540,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 2rem;
+  gap: 0.2rem;
   grid-template-rows: 1fr 1fr;
 }
 .speakers-section .speaker__header h2, .speakers-section .speaker__header h3, .speakers-section .speaker__header p {
@@ -541,10 +555,13 @@ footer {
   width: clamp(8rem, 25vw, 16rem);
   height: auto;
   border-radius: 20rem;
-  border: 1px solid #000;
 }
 .speakers-section .speaker__name, .speakers-section .speaker__location {
   padding-right: 1rem;
+}
+.speakers-section .speaker__lastname {
+  display: block;
+  color: var(--speaker-name);
 }
 
 .form-section {
